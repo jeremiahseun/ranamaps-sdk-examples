@@ -1,0 +1,5 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+    <application android:networkSecurityConfig="@xml/sdk_debug_network_security">
+        <activity android:name=".StyleRecoveryTestActivity" android:exported="false" />
+    </application>
+</manifest>

@@ -1,0 +1,13 @@
+.DS_Store
+.env
+*.local
+**/Keys.local.xcconfig
+**/local.properties
+**/node_modules/
+**/.gradle/
+**/.kotlin/
+**/build/
+**/.dart_tool/
+**/DerivedData/
+**/RanaMapsExamples.xcodeproj/
+**/Package.resolved

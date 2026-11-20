@@ -1,0 +1,37 @@
+name: RanaMapsExamples
+options:
+  deploymentTarget:
+    iOS: '17.0'
+packages:
+  RanaMapsSDK:
+    url: https://github.com/jeremiahseun/RanaMapsSDK.git
+    exactVersion: 0.4.0-beta.0
+targets:
+  RanaMapsSample:
+    type: application
+    platform: iOS
+    sources: [Examples/RanaMapsSample]
+    configFiles:
+      Debug: Examples/Config/Keys.xcconfig
+      Release: Examples/Config/Keys.xcconfig
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.ranamaps.sdk.sample
+        INFOPLIST_FILE: Examples/RanaMapsSample/Info.plist
+    dependencies:
+      - package: RanaMapsSDK
+        product: RanaMapsSDK
+  RideHailSample:
+    type: application
+    platform: iOS
+    sources: [Examples/RideHailSample]
+    configFiles:
+      Debug: Examples/Config/Keys.xcconfig
+      Release: Examples/Config/Keys.xcconfig
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.ranamaps.sdk.ridehail
+        INFOPLIST_FILE: Examples/RideHailSample/Info.plist
+    dependencies:
+      - package: RanaMapsSDK
+        product: RanaMapsSDK

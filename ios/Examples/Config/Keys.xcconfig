@@ -1,0 +1,4 @@
+// Demo app key. Put `RANA_KEY = pk_live_…` in Keys.local.xcconfig next to this file (git-ignored).
+// The RANA_KEY environment variable at launch still overrides it.
+RANA_KEY = pk_live_replace_me
+#include? "Keys.local.xcconfig"

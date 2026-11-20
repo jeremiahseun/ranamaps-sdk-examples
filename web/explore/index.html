@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rana SDK demo</title>
+<link rel="stylesheet" href="../node_modules/@ranamaps/maps-js/dist/style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="demo.css">
+</head>
+<body>
+<aside id="panel">
+  <header>
+    <div class="brand"><img src="mark.svg" alt="" width="28" height="28"><span>Rana SDK demo</span></div>
+    <span id="keyState" class="pill">No key</span>
+  </header>
+
+  <section>
+    <h2>Key</h2>
+    <form id="keyForm" class="row">
+      <label for="key" class="sr">Public key</label>
+      <input id="key" placeholder="pk_live_…" autocomplete="off" spellcheck="false">
+      <button type="submit">Use key</button>
+    </form>
+    <p id="keyInfo" class="muted">A public key that allows this page's origin (<code id="origin"></code>).</p>
+  </section>
+
+  <section>
+    <h2>Search places</h2>
+    <label for="q" class="sr">Search</label>
+    <input id="q" placeholder="Search Epe or Lagos" autocomplete="off">
+    <ul id="results" class="list"></ul>
+    <div id="placeCard" class="card" hidden></div>
+  </section>
+
+  <section>
+    <h2>Directions</h2>
+    <div class="stops">
+      <div><span class="tag">From</span><span id="fromText" class="muted">Tap the map, then “Set as start”</span></div>
+      <div><span class="tag">To</span><span id="toText" class="muted">Search or tap, then “Set as end”</span></div>
+    </div>
+    <div id="modes" class="chips" role="group" aria-label="Travel mode"></div>
+    <div class="row">
+      <button id="go" type="button" class="primary">Get directions</button>
+      <button id="matrix" type="button">Test matrix</button>
+    </div>
+    <p id="routeOut" class="muted"></p>
+  </section>
+
+  <section>
+    <h2>Nearby and roads</h2>
+    <div id="kinds" class="chips" role="group" aria-label="Nearby kind"></div>
+    <div class="row">
+      <button id="snap" type="button">Snap a rough trace</button>
+      <button id="clear" type="button">Clear map</button>
+    </div>
+  </section>
+
+  <section>
+    <h2>Rana Kit features</h2>
+    <div class="row wrap">
+      <button id="kitVehicle" type="button" data-needs="addVehicle">Moving okada</button>
+      <button id="kitPoints" type="button" data-needs="addPoints">Clustered points</button>
+      <button id="kitAvoid" type="button" data-needs="addPolygon">Avoid area</button>
+      <button id="kitRadius" type="button" data-needs="addCircle">500 m radius</button>
+    </div>
+    <p id="kitState" class="muted"></p>
+  </section>
+
+  <section>
+    <h2>Map</h2>
+    <div id="styles" class="chips" role="group" aria-label="Map style"></div>
+  </section>
+
+  <section class="grow">
+    <h2>Calls <button id="clearLog" type="button" class="link">clear</button></h2>
+    <ol id="log"></ol>
+  </section>
+</aside>
+<main id="map"></main>
+<div id="clickCard" class="card floating" hidden></div>
+<script type="module" src="demo.js"></script>
+</body>
+</html>

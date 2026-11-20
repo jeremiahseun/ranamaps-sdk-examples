@@ -1,0 +1,1 @@
+{"expo":{"name":"Rana Maps Journey","slug":"rana-maps-journey","version":"0.0.0","ios":{"bundleIdentifier":"com.ranamaps.sdk.reactnative.sample","supportsTablet":true},"android":{"package":"com.ranamaps.sdk.reactnative.sample"},"plugins":[["@ranamaps/maps-react-native",{"locationWhenInUsePermission":"Show your position on the Rana map.","locationPermission":true}]]}}

@@ -1,0 +1,8 @@
+{
+  "name": "ranamaps-web-examples",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "@ranamaps/maps-js": "https://assets.ranamaps.com/sdk/js/0.4.0-beta.0/ranamaps-maps-js-0.4.0-beta.0.tgz"
+  }
+}
