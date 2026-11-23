@@ -5,6 +5,7 @@ import 'dart:async';
 import 'package:rana_maps/rana_maps.dart' as rana;
 import 'delivery_controller.dart';
 import 'delivery_sheet.dart';
+import 'live_vehicles/live_vehicles_controller.dart';
 import 'stop_search.dart';
 
 void main() => runApp(const DeliveryApp());
@@ -33,12 +34,14 @@ class _DeliveryScreenState extends State<DeliveryScreen> {
   static const searchBarHeight = 56.0;
 
   final controller = DeliveryController();
+  final traffic = LiveVehiclesController();
   final extent = ValueNotifier<double>(snaps[1]);
   double _height = 0, _top = 0;
   bool _padBusy = false, _padDirty = false;
 
   @override
   void dispose() {
+    traffic.dispose();
     extent.dispose();
     controller.dispose();
     super.dispose();
@@ -80,6 +83,7 @@ class _DeliveryScreenState extends State<DeliveryScreen> {
               Positioned.fill(
                 child: rana.RanaMap(
                   onReady: (m) async {
+                    traffic.start(m);
                     await controller.ready(m);
                     unawaited(_applyPadding());
                   },

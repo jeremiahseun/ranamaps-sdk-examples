@@ -1,4 +1,4 @@
-# Flutter journey sample
+# Flutter samples
 
 Run with a public app-restricted key:
 
@@ -17,9 +17,17 @@ The sample installs `rana_maps` from pub.dev and resolves the native SDK from Ra
 and through Swift Package Manager on iOS. Use Flutter 3.44 or later, Android API 26 or later and iOS 17 or later.
 Run `flutter pub get` before building.
 
-Tap the map to select a destination. Exercise playback/pause/scrub/reset, day/night, direct/smooth motion, route-aware movement and detours, a draggable sheet and interactive widget marker. Live directions, automatic rerouting, simulated trace validation and offline downloads require a suitable key. Traces are simulated and opt-in; they never become measured learning evidence.
+## Delivery sample
+
+Use the search field to add a drop-off, then start a delivery. The draggable delivery sheet controls the courier's movement source, route scenarios, and stop completion. Live directions and automatic rerouting require a suitable key.
 
 `flutter test integration_test/native_bridge_test.dart -d <device>` runs real channel/native service checks using a host transport without a live key. `journey_test.dart` requires a configured host key and exercises live map readiness.
+
+### Simulated map traffic
+
+Three cars, three bikes, four pedestrians, and five Maruwas (keke tricycles) appear, move, and leave at staggered times near the default Lagos delivery area. Each marker follows a bundled street centerline. The in-memory simulation repeats every 42 seconds.
+
+The map starts `LiveVehiclesController` when it is ready. The controller updates its own `RanaVehicle` overlays using fixes from `SimulatedLocations`. Delivery stops, routing, and courier location continue through `DeliveryController`. Road geometry comes from [© OpenStreetMap contributors](https://www.openstreetmap.org/copyright).
 
 ## Key-free Android release checks
 
